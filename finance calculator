@@ -1,0 +1,53 @@
+import math
+
+"""code created for  a small financial
+company. they asked to create a program that allows the user to access two
+different financial calculators: an investment calculator and a home loan
+repayment calculator."""
+
+print("Please choose one of the finanancial calculator from below:")
+
+print("investment - to calculate the amount of interest you'll earn on your investment")
+print("bond - to calculate the amount you'll have to pay on a home loan")
+
+
+while True:
+      chosen_calculator = input("Enter either 'investment' or 'bond' from the menu above to proceed: ")
+      if chosen_calculator.lower() == "investment":
+            print("Investment calculator chosen")
+            investment = True
+            amount_depositing = int(input("enter the amount deposited: "))
+
+            interest_rate = int(input("enter the interest rate, without the percentage sign: "))/ 100
+      
+            number_of_years = int(input("enter the number of years you plan to invest for: "))
+            interest = input("do you want 'simple' or 'compound' interest: ")
+
+  
+            if interest == "simple":
+                  total_amount = amount_depositing*(1+ interest_rate*number_of_years)
+                  print(total_amount)
+                  break
+      #compound interest calculation
+            else:
+
+                  compound_interest = amount_depositing * math.pow((1+ interest_rate) , number_of_years)
+                  print(compound_interest)
+                  break
+
+
+      elif chosen_calculator.lower() == "bond" :
+            bond = True
+
+
+            Value_of_house = int(input("Enter present value of your house:"))
+            interest_rate = (int(input("Enter the interest rate, without the percentage sign:"))/100)/12
+            months_to_return = int(input("Enter the months needed to repay the bond:"))
+            repayment = (interest_rate * Value_of_house)/(1 -(1+ interest_rate)** (- months_to_return)) 
+            print('The amount of money which you need to return each month is:')
+
+            print(repayment)
+            break
+      else:
+             print('not a valid option, please try again')
+
