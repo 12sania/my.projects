@@ -42,7 +42,6 @@ for t_str in task_data:
     task_list.append(curr_t)
 #print(task_list)
 
-print(task_list)
 #====Login Section====
 '''This code reads usernames and password from the user.txt file to 
     allow a user to login.
@@ -71,7 +70,7 @@ while not logged_in:
     print("LOGIN")
     curr_user = input("Username: ")
     curr_pass = input("Password: ")
-    print(username_password)
+    
     if curr_user not in username_password.keys():
         print("User does not exist")
         continue
